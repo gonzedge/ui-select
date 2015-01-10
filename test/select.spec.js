@@ -1054,6 +1054,11 @@ describe('ui-select tests', function() {
         expect($(el).find('.ui-select-search')).not.toHaveClass('ng-hide');
       });
 
+      it('should include the placeholder in the input when true', function() {
+        setupSelectComponent('true', 'selectize');
+        expect($(el).find('.ui-select-search').attr('placeholder')).toEqual('Pick one...');
+      });
+
       it('should hide search input when false', function() {
         setupSelectComponent(false, 'selectize');
         expect($(el).find('.ui-select-search')).toHaveClass('ng-hide');
@@ -1066,6 +1071,11 @@ describe('ui-select tests', function() {
       it('should show search input when true', function() {
         setupSelectComponent('true', 'select2');
         expect($(el).find('.select2-search')).not.toHaveClass('ng-hide');
+      });
+
+      it('should include the placeholder in the input when true', function() {
+        setupSelectComponent('true', 'select2');
+        expect($(el).find('.select2-search input').attr('placeholder')).toEqual('Pick one...');
       });
 
       it('should hide search input when false', function() {
@@ -1081,6 +1091,11 @@ describe('ui-select tests', function() {
         setupSelectComponent('true', 'bootstrap');
         clickMatch(el);
         expect($(el).find('.ui-select-search')).not.toHaveClass('ng-hide');
+      });
+
+      it('should include the placeholder in the input when true', function() {
+        setupSelectComponent('true', 'bootstrap');
+        expect($(el).find('.ui-select-search').attr('placeholder')).toEqual('Pick one...');
       });
 
       it('should hide search input when false', function() {
